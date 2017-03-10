@@ -1,0 +1,277 @@
+body {
+  background: seagreen;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  color: #FFC300;
+}
+
+.red:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  border: 3px solid #FFC300;
+  border-right-width: 3px;
+  width: calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  min-width: 150px;
+  min-height: 150px;
+  margin: 30px auto;
+  box-sizing: border-box;
+  background-color: #FFC300;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    position: absolute;
+    right: 30px;
+  }
+}
+.square {
+  box-sizing: border-box;
+  width: 33.333%;
+  height: 33.333%;
+  outline: 3px solid #FFC300;
+  float: left;
+  background-size: 100%;
+  transition: background-image .3s;
+}
+
+.xo {
+  background-image: url(https://github.com/b-hildebrand/b-hildebrand.github.io/blob/master/images/xo.png?raw=true);
+}
+
+.x {
+  background-image: url(https://github.com/b-hildebrand/b-hildebrand.github.io/blob/master/images/X.png?raw=true);
+  background-size: 100%;
+  background-position: center;
+}
+
+.o {
+  background-image: url(https://github.com/b-hildebrand/b-hildebrand.github.io/blob/master/images/O.png?raw=true);
+  background-size: 100%;
+  background-position: center;
+}
+
+.options {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .options {
+    left: -100vw;
+    width: 100vw;
+  }
+
+  .mobile-tab {
+    display: block;
+    position: absolute;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: #FFC300;
+    color: seagreen;
+    font-size: 30px;
+    padding: 11px;
+    line-height: 0;
+    box-sizing: border-box;
+  }
+
+  .options-active {
+    height: 100vh;
+    background: seagreen;
+    left: 30px;
+  }
+  .options-active .mobile-tab {
+    left: 60px;
+    top: 250px;
+  }
+}
+.players {
+  border: 3px solid #FFC300;
+  position: relative;
+  cursor: pointer;
+  width: 168px;
+  height: 40px;
+}
+
+.pl {
+  display: inline-block;
+  padding: 10px;
+}
+
+.pl-active {
+  color: seagreen;
+}
+
+.pl + .pl {
+  border-left: 2px solid #FFC300;
+}
+
+.active-bg {
+  background-color: #FFC300;
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  z-index: -1;
+  transition: left .4s ease-out;
+}
+
+#reset {
+  position: absolute;
+  left: 170px;
+  top: 0;
+  color: orangered;
+  padding: 10px;
+}
+
+.picker {
+  width: 173px;
+  height: 128px;
+  text-align: center;
+  overflow: hidden;
+  transition: all .5s;
+}
+.picker span {
+  width: 100%;
+  float: left;
+  margin: 25px 0 5px 0;
+}
+
+.picker-inactive {
+  height: 0;
+}
+
+.picker-choice {
+  width: 75px;
+  height: 75px;
+  border: 3px solid #FFC300;
+  float: left;
+  box-sizing: border-box;
+  background-color: #FFC300;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.picker-choice:hover {
+  background-color: slateblue;
+  border-color: slateblue;
+}
+
+.picker-choice + .picker-choice {
+  margin-left: 23px;
+}
+
+.turn {
+  width: 168px;
+  height: 168px;
+  background-color: #FFC300;
+  border: 3px solid #FFC300;
+  background-size: 100% 100%;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+  transition: all .5s;
+  z-index: 1;
+}
+
+.turn-hidden {
+  height: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.turn-img {
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.turn-img-x {
+  top: 0;
+}
+
+.turn-img-o {
+  top: 100%;
+}
+
+.turn-text {
+  position: absolute;
+  top: 129px;
+  left: 175px;
+  color: #FFC300;
+  width: 50px;
+  padding: 5px;
+  z-index: -1;
+  transition: left .2s;
+}
+
+.turn-text-inactive {
+  left: 120px;
+}
+
+.ooo {
+  background-image: url(https://github.com/b-hildebrand/b-hildebrand.github.io/blob/master/images/O.png?raw=true);
+}
+
+#lock {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  text-align: center;
+  display: none;
+  left: 2px;
+}
+
+.winner {
+  width: 70vh;
+  height: 70vh;
+  background: seagreen;
+  border: 4px double gold;
+  position: absolute;
+  top: 15vh;
+  left: calc(50vw - 35vh);
+  box-shadow: 2px 10px 17px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  text-align: center;
+  display: none;
+}
+
+#who-wins {
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  background-color: gold;
+  background-size: contain;
+  margin-top: 6%;
+}
+
+#who-wins-text {
+  font-size: 12vh;
+}
+
+#play-again {
+  color: orangered;
+  cursor: pointer;
+  font-size: 4vh;
+}
+#play-again:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    position: absolute;
+    right: 30px;
+  }
+}

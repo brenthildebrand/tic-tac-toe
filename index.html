@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe (WIP)</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="wrapper">
+
+  <div class="square left top dia-down xo"></div>
+  <div class="square ver-mid top xo"></div>
+  <div class="square right top dia-up xo"></div>
+
+  <div class="square left hor-mid xo"></div>
+  <div class="square ver-mid hor-mid dia-down dia-up xo"></div>
+  <div class="square right hor-mid xo"></div>
+
+  <div class="square left bottom dia-up xo"></div>
+  <div class="square ver-mid bottom xo"></div>
+  <div class="square right bottom dia-down xo"></div>
+
+</div>
+<div class="options options-active">
+  
+  <div class="mobile"><i class="fa fa-cog" aria-hidden="true"></i>
+</div>
+
+  <div class="players">
+
+    <div class="active-bg"></div>
+
+    <div class="1p pl pl-active">1 Player</div>
+    <div class="2p pl">2 Player</div>
+
+    <span id="reset" class="red">Reset</span>
+    <span id="lock"><i class="fa fa-lock" aria-hidden="true"></i></span>
+
+  </div>
+
+  <div class="picker">
+
+    <span>I would like to be:</span>
+
+    <div class="picker-choice picker-choice-x x"></div>
+    <div class="picker-choice picker-choice-o o"></div>
+
+  </div>
+
+  <div class="turn turn-hidden">
+
+    <div class="x turn-img turn-img-x"></div>
+
+    <div class="o turn-img turn-img-o"></div>
+
+  </div>
+
+  <div class="turn-text turn-text-inactive">'s turn</div>
+
+</div>
+
+<div class="ooo"></div>
+
+<div class="winner">
+
+  <div id="who-wins"></div>
+  <div id="who-wins-text"><em>WINS!</em></div>
+    <div id="play-again">Play again?</div>
+
+  
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
